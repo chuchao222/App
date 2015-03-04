@@ -1,0 +1,107 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from SI_TIP_APP_GetFriendListService WSDL service -->
+
+  <service name="SI_TIP_APP_GetFriendList" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservice.app.product.tip.com"/>
+      <parameter name="wsdlServiceElement" value="SI_TIP_APP_GetFriendListService"/>
+      <parameter name="schemaQualified" value="http://get_friend_list.app.product.tip.com,http://base.app.product.tip.com,http://webservice.app.product.tip.com"/>
+      <parameter name="wsdlServicePort" value="SI_TIP_APP_GetFriendList"/>
+      <parameter name="className" value="com.tip.product.app.webservice.SI_TIP_APP_GetFriendListSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="SI_TIP_APP_GetFriendList"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="OP_GetFriendList" qname="operNS:OP_GetFriendList" xmlns:operNS="http://webservice.app.product.tip.com" returnQName="retNS:OP_GetFriendListReturn" xmlns:retNS="http://webservice.app.product.tip.com" returnType="rtns:Response" xmlns:rtns="http://get_friend_list.app.product.tip.com" soapAction="" >
+        <parameter qname="pns:request" xmlns:pns="http://webservice.app.product.tip.com" type="tns:Request" xmlns:tns="http://get_friend_list.app.product.tip.com"/>
+      </operation>
+      <parameter name="allowedMethods" value="OP_GetFriendList"/>
+
+      <arrayMapping
+        xmlns:ns="http://webservice.app.product.tip.com"
+        qname="ns:ArrayOf_tns1_ResponseItem"
+        type="java:com.tip.product.app.get_friend_list.ResponseItem[]"
+        innerType="cmp-ns:ResponseItem" xmlns:cmp-ns="http://get_friend_list.app.product.tip.com"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://get_friend_list.app.product.tip.com"
+        qname="ns:RequestItem"
+        type="java:com.tip.product.app.get_friend_list.RequestItem"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://get_friend_list.app.product.tip.com"
+        qname="ns:ResponseMessage"
+        type="java:com.tip.product.app.get_friend_list.ResponseMessage"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://get_friend_list.app.product.tip.com"
+        qname="ns:Response"
+        type="java:com.tip.product.app.get_friend_list.Response"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://get_friend_list.app.product.tip.com"
+        qname="ns:RequestMessage"
+        type="java:com.tip.product.app.get_friend_list.RequestMessage"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://get_friend_list.app.product.tip.com"
+        qname="ns:Request"
+        type="java:com.tip.product.app.get_friend_list.Request"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://base.app.product.tip.com"
+        qname="ns:BaseInfo"
+        type="java:com.tip.product.app.base.BaseInfo"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://get_friend_list.app.product.tip.com"
+        qname="ns:ResponseItem"
+        type="java:com.tip.product.app.get_friend_list.ResponseItem"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://base.app.product.tip.com"
+        qname="ns:AElement"
+        type="java:com.tip.product.app.base.AElement"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <arrayMapping
+        xmlns:ns="http://webservice.app.product.tip.com"
+        qname="ns:ArrayOf_tns1_RequestItem"
+        type="java:com.tip.product.app.get_friend_list.RequestItem[]"
+        innerType="cmp-ns:RequestItem" xmlns:cmp-ns="http://get_friend_list.app.product.tip.com"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

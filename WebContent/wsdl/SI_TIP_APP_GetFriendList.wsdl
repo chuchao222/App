@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservice.app.product.tip.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservice.app.product.tip.com" xmlns:intf="http://webservice.app.product.tip.com" xmlns:tns1="http://get_friend_list.app.product.tip.com" xmlns:tns2="http://base.app.product.tip.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice.app.product.tip.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://base.app.product.tip.com"/>
+   <import namespace="http://get_friend_list.app.product.tip.com"/>
+   <element name="OP_GetFriendList">
+    <complexType>
+     <sequence>
+      <element name="request" type="tns1:Request"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_tns1_RequestItem">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:RequestItem"/>
+    </sequence>
+   </complexType>
+   <element name="OP_GetFriendListResponse">
+    <complexType>
+     <sequence>
+      <element name="OP_GetFriendListReturn" type="tns1:Response"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_tns1_ResponseItem">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:ResponseItem"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://base.app.product.tip.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://webservice.app.product.tip.com"/>
+   <import namespace="http://get_friend_list.app.product.tip.com"/>
+   <complexType abstract="true" name="AElement">
+    <sequence/>
+   </complexType>
+   <complexType name="BaseInfo">
+    <complexContent>
+     <extension base="tns2:AElement">
+      <sequence>
+       <element name="donmain" nillable="true" type="xsd:string"/>
+       <element name="requestTime" nillable="true" type="xsd:string"/>
+       <element name="userId" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://get_friend_list.app.product.tip.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://webservice.app.product.tip.com"/>
+   <import namespace="http://base.app.product.tip.com"/>
+   <complexType name="RequestItem">
+    <complexContent>
+     <extension base="tns2:AElement">
+      <sequence>
+       <element name="id" nillable="true" type="xsd:string"/>
+       <element name="passWord" nillable="true" type="xsd:string"/>
+       <element name="userName" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="RequestMessage">
+    <sequence>
+     <element name="items" nillable="true" type="impl:ArrayOf_tns1_RequestItem"/>
+    </sequence>
+   </complexType>
+   <complexType name="Request">
+    <sequence>
+     <element name="baseInfo" nillable="true" type="tns2:BaseInfo"/>
+     <element name="message" nillable="true" type="tns1:RequestMessage"/>
+    </sequence>
+   </complexType>
+   <complexType name="ResponseItem">
+    <sequence>
+     <element name="id" nillable="true" type="xsd:string"/>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="userName" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ResponseMessage">
+    <sequence>
+     <element name="errMsg" nillable="true" type="xsd:string"/>
+     <element name="items" nillable="true" type="impl:ArrayOf_tns1_ResponseItem"/>
+     <element name="type" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="Response">
+    <sequence>
+     <element name="baseInfo" nillable="true" type="tns2:BaseInfo"/>
+     <element name="message" nillable="true" type="tns1:ResponseMessage"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="OP_GetFriendListRequest">
+
+      <wsdl:part element="impl:OP_GetFriendList" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="OP_GetFriendListResponse">
+
+      <wsdl:part element="impl:OP_GetFriendListResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="SI_TIP_APP_GetFriendList">
+
+      <wsdl:operation name="OP_GetFriendList">
+
+         <wsdl:input message="impl:OP_GetFriendListRequest" name="OP_GetFriendListRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:OP_GetFriendListResponse" name="OP_GetFriendListResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="SI_TIP_APP_GetFriendListSoapBinding" type="impl:SI_TIP_APP_GetFriendList">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="OP_GetFriendList">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="OP_GetFriendListRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="OP_GetFriendListResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="SI_TIP_APP_GetFriendListService">
+
+      <wsdl:port binding="impl:SI_TIP_APP_GetFriendListSoapBinding" name="SI_TIP_APP_GetFriendList">
+
+         <wsdlsoap:address location="http://localhost:8080/appServer/services/SI_TIP_APP_GetFriendList"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

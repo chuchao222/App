@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN" "http://www.iBATIS.com/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+	<settings useStatementNamespaces="true" />
+	<transactionManager type="JDBC">
+		<dataSource type="SIMPLE">
+			<property name="JDBC.Driver" value="oracle.jdbc.driver.OracleDriver" />
+			<property name="JDBC.ConnectionURL" value="jdbc:oracle:thin:@localhost:1521:orcl" />
+			<property name="JDBC.Username" value="cc" />
+			<property name="JDBC.Password" value="cc" />
+		</dataSource>
+	</transactionManager>
+	<sqlMap resource="com/tip/product/app/get_friend_list/sqlmap-op-oracle.xml"/>
+	<sqlMap resource="com/tip/product/app/user/sqlmap-op-oracle.xml" />
+	
+</sqlMapConfig>
+
+
