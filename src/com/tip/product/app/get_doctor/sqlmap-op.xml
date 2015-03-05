@@ -2,11 +2,11 @@
 <!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.iBATIS.com/dtd/sql-map-2.dtd">
 <sqlMap>
 	<typeAlias alias="hashMap" type="java.util.HashMap"/>
- 	<resultMap id="get_user" class="com.tip.product.app.get_friend_list.ResponseItem"> </resultMap>
+ 	<resultMap id="get_doctor" class="com.tip.product.app.get_doctor.ResponseItem"> </resultMap>
  	
  	
  	
-	<select id="get_user_list" parameterClass="java.util.HashMap" resultMap="get_user">
+	<select id="get_doctor_list" parameterClass="java.util.HashMap" resultMap="get_doctor">
 		select 1 from dual   
 	</select>
 	

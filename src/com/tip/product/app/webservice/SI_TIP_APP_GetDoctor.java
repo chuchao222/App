@@ -9,4 +9,9 @@ public class SI_TIP_APP_GetDoctor {
 	 public Response OP_Get_Doctor(Request request){
 		return new Operator().process(request);
 	 }
+	 
+	 public Response OP_Update_Doctor(Request request){
+		 return new Operator().GetDoctorByID(request);
+	 }
+	 
 }

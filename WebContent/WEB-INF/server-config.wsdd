@@ -7,8 +7,8 @@
   <ns1:parameter name="dotNetSoapEncFix" value="true"/>
   <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
   <ns1:parameter name="sendXMLDeclaration" value="true"/>
-  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
   <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
   <ns1:requestFlow>
    <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
     <ns1:parameter name="scope" value="session"/>
@@ -27,11 +27,11 @@
    <ns3:parameter qname="ns1:request" type="ns2:Request"/>
   </ns3:operation>
   <ns1:parameter name="allowedMethods" value="OP_GetFriendList"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="SI_TIP_APP_GetFriendList"/>
-  <ns1:parameter name="className" value="com.tip.product.app.webservice.SI_TIP_APP_GetFriendList"/>
-  <ns1:parameter name="wsdlServicePort" value="SI_TIP_APP_GetFriendList"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://get_friend_list.app.product.tip.com,http://base.app.product.tip.com,http://webservice.app.product.tip.com"/>
+  <ns1:parameter name="wsdlServicePort" value="SI_TIP_APP_GetFriendList"/>
+  <ns1:parameter name="className" value="com.tip.product.app.webservice.SI_TIP_APP_GetFriendList"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://webservice.app.product.tip.com"/>
   <ns1:parameter name="wsdlServiceElement" value="SI_TIP_APP_GetFriendListService"/>
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns3:RequestItem" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.tip.product.app.get_friend_list.RequestItem" xmlns:ns3="http://get_friend_list.app.product.tip.com"/>
@@ -54,6 +54,30 @@
  <ns1:service name="Version" provider="java:RPC">
   <ns1:parameter name="allowedMethods" value="getVersion"/>
   <ns1:parameter name="className" value="org.apache.axis.Version"/>
+ </ns1:service>
+ <ns1:service name="SI_TIP_APP_GetDoctor" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="OP_Update_Doctor" qname="ns15:OP_Update_Doctor" returnQName="ns15:OP_Update_DoctorReturn" returnType="ns16:Response" soapAction="" xmlns:ns15="http://webservice.app.product.tip.com" xmlns:ns16="http://get_doctor.app.product.tip.com">
+   <ns1:parameter qname="ns15:request" type="ns16:Request"/>
+  </ns1:operation>
+  <ns1:operation name="OP_Get_Doctor" qname="ns17:OP_Get_Doctor" returnQName="ns17:OP_Get_DoctorReturn" returnType="ns18:Response" soapAction="" xmlns:ns17="http://webservice.app.product.tip.com" xmlns:ns18="http://get_doctor.app.product.tip.com">
+   <ns1:parameter qname="ns17:request" type="ns18:Request"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="OP_Update_Doctor OP_Get_Doctor"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="SI_TIP_APP_GetDoctor"/>
+  <ns1:parameter name="className" value="com.tip.product.app.webservice.SI_TIP_APP_GetDoctor"/>
+  <ns1:parameter name="wsdlServicePort" value="SI_TIP_APP_GetDoctor"/>
+  <ns1:parameter name="schemaQualified" value="http://get_doctor.app.product.tip.com,http://base.app.product.tip.com,http://webservice.app.product.tip.com"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://webservice.app.product.tip.com"/>
+  <ns1:parameter name="wsdlServiceElement" value="SI_TIP_APP_GetDoctorService"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns19:Request" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.tip.product.app.get_doctor.Request" xmlns:ns19="http://get_doctor.app.product.tip.com"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns20:RequestMessage" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.tip.product.app.get_doctor.RequestMessage" xmlns:ns20="http://get_doctor.app.product.tip.com"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns21:Response" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.tip.product.app.get_doctor.Response" xmlns:ns21="http://get_doctor.app.product.tip.com"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns22:ResponseMessage" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.tip.product.app.get_doctor.ResponseMessage" xmlns:ns22="http://get_doctor.app.product.tip.com"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns23:RequestItem" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.tip.product.app.get_doctor.RequestItem" xmlns:ns23="http://get_doctor.app.product.tip.com"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns24:BaseInfo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.tip.product.app.base.BaseInfo" xmlns:ns24="http://base.app.product.tip.com"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns25:AElement" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.tip.product.app.base.AElement" xmlns:ns25="http://base.app.product.tip.com"/>
+  <ns1:arrayMapping innerType="ns27:RequestItem" languageSpecificType="java:com.tip.product.app.get_doctor.RequestItem[]" qname="ns26:ArrayOf_tns1_RequestItem" xmlns:ns26="http://webservice.app.product.tip.com" xmlns:ns27="http://get_doctor.app.product.tip.com"/>
  </ns1:service>
  <ns1:transport name="http">
   <ns1:requestFlow>

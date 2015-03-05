@@ -5,10 +5,18 @@ public class Operator {
 	
 	public Response process(Request request){
 		Response response = new Response();
-		return response;
-
-	
-	    
+		return response;  
 	
 	}
+	
+	public Response GetDoctorByID(Request request){
+		return null;
+		
+	}
+	
+	public Response UpdateDoctor(Request request){
+		return null;
+		
+	}
+	
 }

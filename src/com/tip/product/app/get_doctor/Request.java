@@ -1,35 +1,27 @@
 package com.tip.product.app.get_doctor;
 
+import com.tip.product.app.base.BaseInfo;
+
 public class Request {
 	
-	private String userId;
-	private String userName;
-	private String password;
-	private Response[] item;
-	public String getUserId() {
-		return userId;
+	private BaseInfo baseInfo;
+	private RequestMessage  Message;
+	
+	public BaseInfo getBaseInfo() {
+		return baseInfo;
 	}
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setBaseInfo(BaseInfo baseInfo) {
+		this.baseInfo = baseInfo;
 	}
-	public String getUserName() {
-		return userName;
+	public RequestMessage getMessage() {
+		return Message;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setMessage(RequestMessage message) {
+		Message = message;
 	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public Response[] getItem() {
-		return item;
-	}
-	public void setItem(Response[] item) {
-		this.item = item;
-	}
+	
+	
+	
 	
 	
 }

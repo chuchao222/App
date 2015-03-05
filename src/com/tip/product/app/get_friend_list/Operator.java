@@ -36,7 +36,6 @@ public class Operator {
 			
 		
 			// 数据库 输出接口参数		
-		 
 			List<ResponseItem> responseItemLists= SqlClient.getInstance().queryForList("get_friend_list");
 			
 			ResponseItem[] responseItems = new ResponseItem[responseItemLists.size()];
