@@ -17,7 +17,7 @@ public class TestWS {
 		RPCServiceClient serviceClient=new RPCServiceClient();
 		Options options=serviceClient.getOptions();
 		
-		EndpointReference targetEpr=new EndpointReference("http://localhost:8080/appServer/services");
+		EndpointReference targetEpr=new EndpointReference("http://localhost:8080/appServer/services/SI_TIP_APP_GetFriendList");
 		options.setTo(targetEpr);
 		
 		Object[] opAddEntryArgs=new Object[]{"1"};
@@ -27,7 +27,7 @@ public class TestWS {
 		
 		//System.out.println(serviceClient.invokeBlocking(opAddEntry, opAddEntryArgs));
 		System.out.println(serviceClient.getOptions().toString());
-		//System.out.println(serviceClient.invokeBlocking(opAddEntry, opAddEntryArgs,classes)[0]);
+		System.out.println(serviceClient.invokeBlocking(opAddEntry, opAddEntryArgs,classes)[0]);
 	}
 
 }

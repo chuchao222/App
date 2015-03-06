@@ -5,7 +5,7 @@
 	<typeAlias alias="get_friends" type="com.tip.product.app.get_friend_list.ResponseItem"/>
 	
 	<select id="get_friend_list" parameterClass="java.util.HashMap" resultClass="get_friends">
-		select  id,user_name,password from tip_user
+		select  id,user_name,password from base_user
 	</select>
 	
 </sqlMap>

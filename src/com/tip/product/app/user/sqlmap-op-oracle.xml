@@ -5,7 +5,7 @@
 	<typeAlias alias="get_user" type="com.tip.product.app.user.User"/>
 	
 	<select id="get_user_list" parameterClass="java.util.HashMap" resultClass="hashMap">
-		select id,user_name,password from tip_user
+		select id,user_name,password from base_user
 	</select>
 	
 </sqlMap>
