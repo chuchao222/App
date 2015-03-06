@@ -20,6 +20,8 @@ public class BaseInfoDaoImpl extends SqlMapClientDaoSupport  implements IBaseInf
 		HashMap params=new HashMap();
 		params.put("params", params);
 		
+		int baseId=-1;
+		
 		return 0;
 	}
 

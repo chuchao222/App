@@ -38,6 +38,11 @@
   	<property name="dataSource"><ref bean="dataSource"/></property>
   	<property name="sqlMapClient"><ref bean="sqlMapClient"></ref></property>
   </bean>
+  
+ <bean id="UserDaoImpl" class="com.tip.product.app.user.UserDaoImpl">
+  	<property name="dataSource"><ref bean="dataSource"/></property>
+  	<property name="sqlMapClient"><ref bean="sqlMapClient"></ref></property>
+  </bean>
                
 
 </beans>
